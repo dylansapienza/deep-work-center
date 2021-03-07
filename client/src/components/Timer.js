@@ -4,6 +4,9 @@ import '../index.css';
 function Timer(props){
 
     const [startStop, setStartStop] = useState("Start")
+    const [mins, setMins] = useState(25);
+    const [secs, setSecs] = useState(0);
+
 
     function statusChange(){
         if(startStop === "Start"){
@@ -14,12 +17,35 @@ function Timer(props){
         }
     }
 
+    function reset(){
+        setMins(25);
+        setSecs(0);
+        statusChange();
+    }
+
+    if(secs < 0){
+        setSecs(59)
+        setMins(mins - 1)
+    }
+
+    //If we are out of mins then initiate beep and begin the next cycle
+    //Depending on cycle count, set time and begin running
+
+    useEffect(() => {
+        if(startStop === "Pause"){
+            const id = window.setInterval(() => {
+                setSecs(secs => secs - 1)
+            }, 1000)
+            return () => {window.clearInterval(id);}
+        }
+    }, [statusChange]);
+
     return(
         <div class = "md:col-span-2 col-span-4">
             <div class = "bg-white rounded-xl shadow-xl">
                 <div class = "h-72">
                     <h2 class="text-center text-3xl sm:text-3xl lg:text-4xl leading-normal font-extrabold text-gray-900 tracking-tight mb-8 ">Timer</h2>
-                    <h2 class="text-center text-5xl sm:text-5xl lg:text-6xl leading-normal font-extrabold text-gray-900 tracking-tight mb-8 ">15:00</h2>
+                    <h2 class="text-center text-5xl sm:text-5xl lg:text-6xl leading-normal font-extrabold text-gray-900 tracking-tight mb-8 ">{mins}:{secs < 10 ? "0": null}{secs} </h2>
                     <div class = "flex justify-center">
                         <button
                             onClick={statusChange}
@@ -28,6 +54,7 @@ function Timer(props){
                             {startStop}
                         </button>
                         <button
+                            onClick={reset}
                             type="button"
                             class="border border-gray-200 bg-gray-200 text-gray-700 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-300 focus:outline-none focus:shadow-outline">
                             Reset
