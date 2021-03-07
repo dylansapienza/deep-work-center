@@ -4,7 +4,7 @@ import '../index.css';
 function Timer(props){
 
     const [startStop, setStartStop] = useState("Start")
-    const [mins, setMins] = useState(25);
+    const [mins, setMins] = useState(props.mins);
     const [secs, setSecs] = useState(0);
 
 
@@ -18,9 +18,10 @@ function Timer(props){
     }
 
     function reset(){
-        setMins(25);
+        setMins(props.mins);
         setSecs(0);
-        statusChange();
+        if(startStop === "Pause")
+            statusChange();
     }
 
     if(secs < 0){
