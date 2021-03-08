@@ -43,7 +43,7 @@ function Timer(props){
 
     return(
         <div class = "md:col-span-2 col-span-4">
-            <div class = "bg-white rounded-xl shadow-xl">
+            <div class = "bg-white rounded-xl shadow-2xl">
                 <div class = "h-72">
                     <h2 class="text-center text-3xl sm:text-3xl lg:text-4xl leading-normal font-extrabold text-gray-900 tracking-tight mb-8 ">Timer</h2>
                     <h2 class="text-center text-5xl sm:text-5xl lg:text-6xl leading-normal font-extrabold text-gray-900 tracking-tight mb-8 ">{mins}:{secs < 10 ? "0": null}{secs} </h2>

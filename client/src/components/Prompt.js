@@ -23,6 +23,20 @@ function Prompt(props){
                             <option>15 Mins</option>
                             
                             <option>20 Mins</option>
+
+                            <option>30 Mins</option>
+
+                            <option>45 Mins</option>
+
+                            <option>60 Mins</option>
+                            
+                            <option>75 Mins</option>
+
+                            <option>90 Mins</option>
+                            
+                            <option>120 Mins</option>
+                            
+
                         </select> &nbsp;&nbsp;&nbsp;
                         <button
                             onClick={submitTime}
