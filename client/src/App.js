@@ -8,7 +8,7 @@ import Timer from './components/Timer'
 
 function App(){
 
-  const [response, setResponse] = useState("")
+  const [response, setResponse] = useState({ text: 'Loading...', attribution: '' })
   const [desiredTime, setDesiredTime] = useState(0);
 
   function setTimer(childData){
@@ -18,8 +18,9 @@ function App(){
     }
 
   function getResponse(){
-    axios.get('/api/v1/say-something').then((res) => {
+    axios.get('/api/quote').then((res) => {
       setResponse(res.data);
+      console.log(response);
     });
 }
 
@@ -37,8 +38,8 @@ function App(){
             <div class = "md:col-span-2 col-span-4">
             <div class = "bg-red-300 rounded-xl shadow-2xl">
                 <div class = "h-72 p-10">
-                <h2 class="text-center text-3xl sm:text-3xl lg:text-4xl leading-normal font-bold italic text-gray-900 tracking-tight mb-8 ">Waste no more time arguing what a good man should be. Be One.</h2>
-                <h2 class="text-right text-xl sm:text-xl lg:text-xl leading-normal italic text-gray-500 tracking-tight mb-8 ">-Marcus Aurelius</h2>
+                <h2 class="text-center text-3xl sm:text-3xl lg:text-4xl leading-normal font-bold italic text-gray-900 tracking-tight mb-8 ">{response.text}</h2>
+                <h2 class="text-right text-xl sm:text-xl lg:text-xl leading-normal italic text-gray-500 tracking-tight mb-8 ">-{response.attribution}</h2>
                  
               </div>
             </div>

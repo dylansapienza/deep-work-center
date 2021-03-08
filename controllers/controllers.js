@@ -1,7 +1,11 @@
-const saySomething = (req, res) => {
-  res.status(200).json({
-    body: 'Hello from the server!',
-  });
+const quotes = require('./quote_data.json');
+
+function pickQuote() {
+  return (quotes[Math.floor(Math.random() * quotes.length)]);
+}
+
+const quote = (req, res) => {
+  res.send(pickQuote());
 };
 
-module.exports.saySomething = saySomething;
+module.exports.quote = quote;
