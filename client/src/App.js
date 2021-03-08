@@ -35,8 +35,11 @@ function App(){
         <h2 class="text-center text-3xl sm:text-5xl lg:text-6xl leading-none font-extrabold text-gray-900 tracking-tight mb-8">Deep Work Center</h2>
           <div class = "grid justify-items-stretch gap-8 grid-cols-4">
             <div class = "md:col-span-2 col-span-4">
-            <div class = "bg-white rounded-xl shadow-2xl">
-                <div class = "h-72">   
+            <div class = "bg-red-300 rounded-xl shadow-2xl">
+                <div class = "h-72 p-10">
+                <h2 class="text-center text-3xl sm:text-3xl lg:text-4xl leading-normal font-bold italic text-gray-900 tracking-tight mb-8 ">Waste no more time arguing what a good man should be. Be One.</h2>
+                <h2 class="text-right text-xl sm:text-xl lg:text-xl leading-normal italic text-gray-500 tracking-tight mb-8 ">-Marcus Aurelius</h2>
+                 
               </div>
             </div>
             </div>
