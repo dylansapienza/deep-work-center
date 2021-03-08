@@ -10,6 +10,7 @@ function App(){
 
   const [response, setResponse] = useState({ text: 'Loading...', attribution: '' })
   const [desiredTime, setDesiredTime] = useState(0);
+  const [gettingQuote, setGettingQuote] = useState(0);
 
   function setTimer(childData){
     childData = childData.substr(0,childData.indexOf(' '));
@@ -26,7 +27,7 @@ function App(){
 
   useEffect(() => {
     getResponse();
-  }, [])
+  }, [response])
 
 
 
@@ -38,10 +39,15 @@ function App(){
             <div class = "md:col-span-2 col-span-4">
             <div class = "bg-red-300 rounded-xl shadow-2xl">
                 <div class = "h-72 p-10">
-                <h2 class="text-center text-3xl sm:text-3xl lg:text-4xl leading-normal font-bold italic text-gray-900 tracking-tight mb-8 ">{response.text}</h2>
-                <h2 class="text-right text-xl sm:text-xl lg:text-xl leading-normal italic text-gray-500 tracking-tight mb-8 ">-{response.attribution}</h2>
-                 
-              </div>
+                  <h2 class="text-center text-3xl sm:text-3xl lg:text-4xl leading-normal font-bold italic text-gray-900 tracking-tight mb-8 ">{response.text}</h2>
+                  <h2 class="text-right text-xl sm:text-xl lg:text-xl leading-normal italic text-gray-500 tracking-tight mb-8 ">-{response.attribution}</h2>
+                  <button 
+                  onClick = {getResponse()}
+                  class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                    <svg class="fill-current w-4 h-4 mr-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/></svg>
+                  </button>   
+                </div>
+
             </div>
             </div>
 
