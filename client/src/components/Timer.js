@@ -42,6 +42,7 @@ function Timer(props){
             }, 1000)
             return () => {window.clearInterval(id);}
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [statusChange]);
 
     return(
