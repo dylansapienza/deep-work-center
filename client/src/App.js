@@ -8,7 +8,8 @@ import Timer from './components/Timer'
 
 function App(){
 
-  const [response, setResponse] = useState({ text: 'Loading...', attribution: '' })
+  const [response, setResponse] = useState({ text: 'Loading...', attribution: '' });
+  const [timeSelection, setTimeSelection] = useState(0);
   const [desiredTime, setDesiredTime] = useState(0);
 
   function setTimer(childData){
