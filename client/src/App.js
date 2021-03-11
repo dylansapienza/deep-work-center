@@ -4,7 +4,7 @@ import axios from 'axios'
 import TimerSelect from './components/TimerSelect'
 import Prompt from './components/Prompt'
 import Timer from './components/Timer'
-
+import Stopwatch from './components/Stopwatch'
 
 
 function App(){
@@ -16,6 +16,9 @@ function App(){
   function timeSelect(childData){
     if(childData === 1){
       setTimerBlock(desiredTime === 0 ? <Prompt setTimer = {setTimer} /> : <Timer setTimer = {setTimer} mins = {desiredTime}/>);
+    }
+    if(childData === 2){
+      setTimerBlock(<Stopwatch />)
     }
     else{
       console.log(childData)
