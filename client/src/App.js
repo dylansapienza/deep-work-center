@@ -14,8 +14,12 @@ function App(){
   const [timerBlock, setTimerBlock] = useState(<TimerSelect select={timeSelect}/>)
 
   function timeSelect(childData){
-    if(childData === 1)
-      setTimerBlock(desiredTime === 0 ? <Prompt setTimer = {setTimer} /> : <Timer setTimer = {setTimer} mins = {desiredTime}/>);    
+    if(childData === 1){
+      setTimerBlock(desiredTime === 0 ? <Prompt setTimer = {setTimer} /> : <Timer setTimer = {setTimer} mins = {desiredTime}/>);
+    }
+    else{
+      console.log(childData)
+    }
   }
 
   function setTimer(childData){
