@@ -5,6 +5,7 @@ import TimerSelect from './components/TimerSelect'
 import Prompt from './components/Prompt'
 import Timer from './components/Timer'
 import Stopwatch from './components/Stopwatch'
+import Pomodoro from './components/Pomodoro'
 
 
 function App(){
@@ -19,6 +20,9 @@ function App(){
     }
     if(childData === 2){
       setTimerBlock(<Stopwatch />)
+    }
+    if(childData === 3){
+      setTimerBlock(<Pomodoro />)
     }
     else{
       console.log(childData)
