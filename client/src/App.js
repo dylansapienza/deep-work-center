@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './index.css';
 import axios from 'axios'
+import TimerSelect from './components/TimerSelect'
 import Prompt from './components/Prompt'
 import Timer from './components/Timer'
 
@@ -9,8 +10,13 @@ import Timer from './components/Timer'
 function App(){
 
   const [response, setResponse] = useState({ text: 'Loading...', attribution: '' });
-  const [timeSelection, setTimeSelection] = useState(0);
   const [desiredTime, setDesiredTime] = useState(0);
+  const [timerBlock, setTimerBlock] = useState(<TimerSelect select={timeSelect}/>)
+
+  function timeSelect(childData){
+    if(childData === 1)
+      setTimerBlock(desiredTime === 0 ? <Prompt setTimer = {setTimer} /> : <Timer setTimer = {setTimer} mins = {desiredTime}/>);    
+  }
 
   function setTimer(childData){
     if(childData === 0)
@@ -54,8 +60,10 @@ function App(){
             </div>
             </div>
 
-              {desiredTime === 0 ? <Prompt setTimer = {setTimer} /> : <Timer setTimer = {setTimer} mins = {desiredTime}/>}             
-             
+              {timerBlock}
+
+              {/* {desiredTime === 0 && timeSelection !== 0 ? <Prompt setTimer = {setTimer} /> : <Timer setTimer = {setTimer} mins = {desiredTime}/>}             
+              */}
              
              {/* task list */}
             <div class = "justify-self-center col-span-4">
