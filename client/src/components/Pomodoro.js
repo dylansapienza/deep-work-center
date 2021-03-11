@@ -35,14 +35,16 @@ function Pomodoro(props){
     }
 
     if(mins < 0){
+        console.log(cycles);
         setCycles(cycles + 1)
-        if (cycles % 2 === 0){
+        console.log(cycles);
+        if (cycles % 2 === 0 && cycles % 4 !== 0){
             setMins(1)
             setSecs(0)
             setRunning(true)
             // updateColor()
         }
-        if (cycles % 4 === 0 && cycles !== 0){
+        else if (cycles % 4 === 0 && cycles !== 0){
             setMins(3)
             setSecs(0)
             setRunning(true)
