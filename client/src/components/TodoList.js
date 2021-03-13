@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../index.css';
+import Task from './Task'
 
 function TodoList(props){
 
@@ -9,17 +10,15 @@ function TodoList(props){
         <div class = "justify-self-stretch col-span-4">
             <div class = "bg-blue-200 rounded-xl shadow-2xl">
                 <div class = "h-72 p-10"> 
-                    <ul>
-                        <li>
-                            Milk
-                        </li>
-                        <li>
-                            Coffee
-                        </li>
-                        <li>
-                            Tea
-                        </li>
-                    </ul>
+                    <div class  = "bg-gray-400 rounded-xl shadow-2xl">
+                        <div class = "h-full p-4">
+                            <ul class = "space-y-2">
+                                <Task name = "Get Groceries" />
+                                <Task name = "Study for Linear Algebra" />
+                                <Task name = "Take Over the World" />
+                            </ul>
+                        </div>
+                    </div>
 
                 </div>
             </div>
