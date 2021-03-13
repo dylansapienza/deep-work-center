@@ -6,6 +6,7 @@ import Prompt from './components/Prompt'
 import Timer from './components/Timer'
 import Stopwatch from './components/Stopwatch'
 import Pomodoro from './components/Pomodoro'
+import TodoList from './components/TodoList'
 
 
 function App(){
@@ -76,12 +77,13 @@ function App(){
               {/* {desiredTime === 0 && timeSelection !== 0 ? <Prompt setTimer = {setTimer} /> : <Timer setTimer = {setTimer} mins = {desiredTime}/>}             
               */}
              
-             {/* task list */}
-            <div class = "justify-self-center col-span-4">
-              <img class = "rounded-xl shadow-xl" alt="Inspo" src = "https://content.presspage.com/uploads/63/1920_aristotlequote.jpg?10000" style = {{maxWidth: '100%'}}></img>
+             <TodoList />
+
+              {/* <img class = "rounded-xl shadow-xl" alt="Inspo" src = "https://content.presspage.com/uploads/63/1920_aristotlequote.jpg?10000" style = {{maxWidth: '100%'}}></img> */}
+          
           </div>
           </div>
-        </div>
+
     </div>
     
   );

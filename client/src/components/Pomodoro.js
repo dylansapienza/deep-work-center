@@ -37,8 +37,8 @@ function Pomodoro(props){
     if(mins < 0){
         console.log(cycles);
         setCycles(cycles + 1)
-        console.log(cycles);
         if (cycles % 2 === 0 && cycles % 4 !== 0){
+        console.log(cycles);
             setMins(1)
             setSecs(0)
             setRunning(true)
