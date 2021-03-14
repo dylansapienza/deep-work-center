@@ -7,10 +7,20 @@ function TodoList(props){
     //List to hold tasks
     const [task_list, set_task_list] = useState([]);
     const [newTaskModal, setNewTaskModal] = useState(<></>)
+    let temp_array = []
 
     function addNewTask(name){
+        if(name === ""){
+            alert("Enter a Task Name")
+            return
+        }
         console.log(name)
-        setNewTaskModal(<></>)
+        
+        set_task_list(task_list.concat(name));
+
+        console.log(task_list);
+        
+        setNewTaskModal(<></>);
     }
 
     function newTask(){
@@ -71,13 +81,13 @@ function TodoList(props){
                     <div class  = "bg-gray-400 rounded-xl shadow-2xl">
                         <div class = "h-full p-4">
                             <ul class = "space-y-2">
-                                <Task name = "Get Groceries" number = "1"/>
-                                <Task name = "Study for Linear Algebra" number = "2" />
-                                <Task name = "Take Over the World" number = "3"/>
+                                {task_list.map((task, index) => (
+                                    index = index + 1,
+                                    <Task name = {task} number = {index}/>
+                                ))}
                             </ul>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
