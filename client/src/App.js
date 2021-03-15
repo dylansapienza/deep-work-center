@@ -36,6 +36,7 @@ function App(){
     else{
     childData = childData.substr(0,childData.indexOf(' '));
     setDesiredTime(childData);
+    timeSelect(1);
     console.log(childData);
     }
   }

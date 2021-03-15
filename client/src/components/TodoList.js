@@ -81,7 +81,7 @@ function TodoList(props){
                     <div class  = "bg-gray-400 rounded-xl shadow-2xl">
                         <div class = "h-full p-4">
                             <ul class = "space-y-2">
-                                {task_list.map((task, index) => (
+                                {task_list.length === 0 ? <div class = "text-white text-xl font-bold">Press the + Button to Manage Tasks</div> : task_list.map((task, index) => (
                                     index = index + 1,
                                     <Task name = {task} number = {index}/>
                                 ))}
