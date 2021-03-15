@@ -53,7 +53,7 @@ function App(){
 
 
   return(
-    <div class = "h-full bg-yellow-200">
+    <div class = "h-screen bg-yellow-200">
       <div class = "flex-auto max-w-9xl mx-auto p-10">
         <h2 class="text-center text-3xl sm:text-5xl lg:text-6xl leading-none font-extrabold text-gray-900 tracking-tight mb-8">Deep Work Center</h2>
           <div class = "grid justify-items-stretch gap-8 grid-cols-4">
