@@ -17,7 +17,11 @@ function App(){
 
   function timeSelect(childData){
     if(childData === 1){
-      setTimerBlock(desiredTime === 0 ? <Prompt setTimer = {setTimer} /> : <Timer setTimer = {setTimer} mins = {desiredTime}/>);
+      if(desiredTime === 0){
+        setTimerBlock(<Prompt setTimer = {setTimer} select={timeSelect}/>);
+      } else{
+      setTimerBlock(<Timer setTimer = {setTimer} mins = {desiredTime}/>);
+      }
     }
     if(childData === 2){
       setTimerBlock(<Stopwatch />)
@@ -36,7 +40,6 @@ function App(){
     else{
     childData = childData.substr(0,childData.indexOf(' '));
     setDesiredTime(childData);
-    timeSelect(1);
     console.log(childData);
     }
   }

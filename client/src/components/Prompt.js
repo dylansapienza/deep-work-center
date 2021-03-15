@@ -7,6 +7,7 @@ function Prompt(props){
         const e = document.getElementById("mins");
         var time = e.value;
         props.setTimer(time);
+        props.select(1);
     }
 
     return(
