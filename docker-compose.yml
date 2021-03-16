@@ -1,0 +1,20 @@
+
+version: '3'
+
+services:
+  backend:
+    container_name: motivation_api
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: dylansapienza/motivation_api
+    ports:
+      - "5000:5000"
+  frontend:
+    container_name: motivation_web
+    build:
+      context: ./client
+      dockerfile: ./Dockerfile
+    image: dylansapienza/motivation_web
+    ports:
+      - "3000:3000"
