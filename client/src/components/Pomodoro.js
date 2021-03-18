@@ -6,11 +6,11 @@ function Pomodoro(props){
     const [startStop, setStartStop] = useState("Start")
     const [isRunning, setRunning] = useState(false)
     const [cycles, setCycles] = useState(1);
-    const [mins, setMins] = useState(2);
+    const [mins, setMins] = useState(25);
     const [secs, setSecs] = useState(0);
 
     function go_back(){
-        props.setTimer(0);
+        props.select(0);
     }
 
     function statusChange(){
@@ -23,7 +23,7 @@ function Pomodoro(props){
     }
 
     function reset(){
-        setMins(props.mins);
+        setMins(25);
         setSecs(0);
         if(startStop === "Pause")
             statusChange();
@@ -39,13 +39,13 @@ function Pomodoro(props){
         setCycles(cycles + 1)
         if (cycles % 2 === 0 && cycles % 4 !== 0){
         console.log(cycles);
-            setMins(1)
+            setMins(15)
             setSecs(0)
             setRunning(true)
             // updateColor()
         }
         else if (cycles % 4 === 0 && cycles !== 0){
-            setMins(3)
+            setMins(5)
             setSecs(0)
             setRunning(true)
             // updateColor()
@@ -75,7 +75,7 @@ function Pomodoro(props){
         <div class = "md:col-span-2 col-span-4">
             <div class = "bg-white rounded-xl shadow-2xl p-4">
                 <div class = "h-72">
-                    <h2 class="text-center text-3xl sm:text-3xl lg:text-4xl leading-normal font-extrabold text-gray-900 tracking-tight mb-8 ">Timer</h2>
+                    <h2 class="text-center text-3xl sm:text-3xl lg:text-4xl leading-normal font-extrabold text-gray-900 tracking-tight mb-8 ">Pomodoro Timer</h2>
                     <h2 class="text-center text-5xl sm:text-5xl lg:text-6xl leading-normal font-extrabold text-gray-900 tracking-tight mb-8 ">{mins}:{secs < 10 ? "0": null}{secs} </h2>
                     <div class = "flex justify-center">
                         <button

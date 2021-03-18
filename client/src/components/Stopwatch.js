@@ -8,7 +8,7 @@ function Stopwatch(props){
     const [secs, setSecs] = useState(0);
 
     function go_back(){
-        props.setTimer(0);
+        props.select(0);
     }
 
     function statusChange(){

@@ -4,11 +4,11 @@ import '../index.css';
 function Timer(props){
 
     const [startStop, setStartStop] = useState("Start")
-    const [mins, setMins] = useState(props.mins);
+    const [mins, setMins] = useState(props.desiredTime);
     const [secs, setSecs] = useState(0);
 
     function go_back(){
-        props.setTimer(0);
+        props.select(0);
     }
 
     function statusChange(){
@@ -21,7 +21,7 @@ function Timer(props){
     }
 
     function reset(){
-        setMins(props.mins);
+        setMins(props.desiredTime);
         setSecs(0);
         if(startStop === "Pause")
             statusChange();

@@ -16,18 +16,17 @@ function App(){
   const [timerBlock, setTimerBlock] = useState(<TimerSelect select={timeSelect}/>)
 
   function timeSelect(childData){
+    if (childData === 0){
+      setTimerBlock(<TimerSelect select = {timeSelect}/>);
+    }
     if(childData === 1){
-      if(desiredTime === 0){
-        setTimerBlock(<Prompt setTimer = {setTimer} select={timeSelect}/>);
-      } else{
-      setTimerBlock(<Timer setTimer = {setTimer} mins = {desiredTime}/>);
-      }
+      setTimerBlock(<Prompt setTimer = {setTimer}/>);
     }
     if(childData === 2){
-      setTimerBlock(<Stopwatch />)
+      setTimerBlock(<Stopwatch select = {timeSelect} />)
     }
     if(childData === 3){
-      setTimerBlock(<Pomodoro />)
+      setTimerBlock(<Pomodoro select = {timeSelect}/>)
     }
     else{
       console.log(childData)
@@ -40,6 +39,9 @@ function App(){
     else{
     childData = childData.substr(0,childData.indexOf(' '));
     setDesiredTime(childData);
+    console.log(desiredTime)
+    setTimerBlock(<Timer desiredTime = {childData} select = {timeSelect}/>)
+    // timeSelect(4);
     console.log(childData);
     }
   }
