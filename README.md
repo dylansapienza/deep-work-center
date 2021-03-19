@@ -1,23 +1,16 @@
-# React-Express-Template
+# Deep Work Center
 
-A **Template** / **Boilerplate** for making modern **Progressive Web Apps**. 
+A Place To Help You Get Work Done.
 
+## Included Features
 
-## Included Packages
+**Timers/Trackers**
 
-**Frontend:**
- - React
- - Axios
- 
-**API:**
- - Express
- - CORS
- - Body-Parser
+- Countdown Timer
+- Stopwatch
+- Pomodoro Tracker
 
-**Development Tools:**
+**Motivation**
 
- - Concurrently
- - Nodemon
- - ESLint
- - DotEnv
-
+- Task Manager
+- Quote API
