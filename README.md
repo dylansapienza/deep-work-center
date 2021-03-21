@@ -16,3 +16,9 @@ A Place To Help You Get Work Done.
 
 - Task Manager
 - Quote API
+
+**Technologies**
+- React
+- Express
+- Tailwind
+- Heroku
