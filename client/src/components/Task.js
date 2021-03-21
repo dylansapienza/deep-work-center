@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactDOM from 'react-dom';
 import "../index.css";
 
 function Task(props) {
@@ -33,12 +34,13 @@ function Task(props) {
   }
 
   function deleteTask(){
+    document.getElementById(props.number).remove();
     setDeleted(true);
   }
 
   return (
       <li>
-        <div class = "flex">
+        <div class = "flex" id = {props.number}>
           <button class = "flex-initial bg-white hover:bg-red-400 rounded-full h-12 w-12 flex items-center justify-center self-center" onMouseEnter={()=>showDelete(true)} onMouseLeave={()=>showDelete(false)} onClick={() => deleteTask()}><div class = {textDecor}>{task_head}.</div></button>
             &nbsp;
             <div class="flex-1 bg-white rounded-xl shadow-xl p-4 ">
