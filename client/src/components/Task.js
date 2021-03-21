@@ -34,6 +34,7 @@ function Task(props) {
   }
 
   function deleteTask(){
+    props.delete(props.number);
     document.getElementById(props.number).remove();
     setDeleted(true);
   }

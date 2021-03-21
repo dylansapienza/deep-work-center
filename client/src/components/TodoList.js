@@ -23,6 +23,12 @@ function TodoList(props){
         setNewTaskModal(<></>);
     }
 
+    //TODO: FIX This
+    function deleteEntry(number){
+        console.log(task_list)
+        console.log(task_list.splice(number-1, number))
+    }
+
     function newTask(){
         setNewTaskModal(<div class="fixed z-10 inset-0 overflow-y-auto">
         <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
@@ -83,7 +89,7 @@ function TodoList(props){
                             <ul class = "space-y-2">
                                 {task_list.length === 0 ? <div class = "text-white text-xl font-bold">Press the + Button to Manage Tasks</div> : task_list.map((task, index) => (
                                     index = index + 1,
-                                    <Task name = {task} number = {index}/>
+                                    <Task name = {task} number = {index} delete = {deleteEntry}/>
                                 ))}
                             </ul>
                         </div>
